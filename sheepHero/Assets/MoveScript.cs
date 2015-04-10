@@ -34,6 +34,6 @@ public class MoveScript : MonoBehaviour {
 	void FixedUpdate()
 	{
 		// Apply movement to rigidbody
-		Rigidbody2D.velocity = movement;
+		// Rigidbody2D.velocity = movement;
 	}
 }
