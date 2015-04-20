@@ -6,10 +6,17 @@ using System.Collections;
 /// </summary>
 public class SheepScript : MonoBehaviour {
 
-	/// <summary>
+	/*
+	 * BPM Formula:
+	float scale = 1 + Mathf.Cos(Time.time  (bpm / 60)  Mathf.PI * 2);
+	transform.localScale = new Vector3(scale, scale, scale);
+	*/
+
+	// BPM 100 gives us -0.5
+	// private float scale = 1 + Mathf.Cos (/*Time.time * */(100 / 60) * Mathf.PI * 2);
+
 	/// Speed of the sheep
-	/// </summary>
-	public Vector2 speed = new Vector2(1,1);
+	public Vector2 speed = new Vector2(0,0.5f);
 
 	// Direction movement 
 	// Sync with tempo grid
@@ -18,9 +25,14 @@ public class SheepScript : MonoBehaviour {
 	// Store Movement
 	private Vector2 movement;
 	
+	void Start() 
+	{
+		Destroy (gameObject, 5.3f);
+	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		// Retrieve axis information
 		// float inputX = Input.GetAxis ("Horizontal");
 		// float inputY = Input.GetAxis ("Vertical");
