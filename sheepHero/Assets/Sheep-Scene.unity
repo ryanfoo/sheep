@@ -928,6 +928,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1111364603}
   - 212: {fileID: 1111364602}
+  - 114: {fileID: 1111364604}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -973,6 +974,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1391901783}
   m_RootOrder: 0
+--- !u!114 &1111364604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1111364601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb89be73ebd84b0093949bea157e16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  morningColor: {r: 1, g: .921568632, b: .0156862754, a: 1}
+  afternoonColor: {r: 1, g: 1, b: 1, a: 1}
+  sunsetColor: {r: 1, g: 0, b: 1, a: 1}
+  nightColor: {r: 0, g: 0, b: 1, a: 1}
+  eveningColor: {r: .5, g: .5, b: .5, a: 1}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  nextColor: {r: 0, g: 0, b: 0, a: 0}
+  colorArray:
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  duration: 30
 --- !u!1 &1216679086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,8 +1167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc1fe47c6df640eb8b533e3cb4d72d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
-  direction: {x: 0, y: -1}
 --- !u!114 &1514690382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,8 +1178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc1fe47c6df640eb8b533e3cb4d72d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 10, y: 10}
-  direction: {x: 0, y: -1}
 --- !u!114 &1514690383
 MonoBehaviour:
   m_ObjectHideFlags: 0
