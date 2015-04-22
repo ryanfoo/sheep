@@ -27,6 +27,8 @@ public class SheepScript : MonoBehaviour {
 	
 	void Start() 
 	{
+		// Replace with sheep sound
+		SoundHelperScript.Instance.MakePlayerShotSound();
 		Destroy (gameObject, 5.3f);
 	}
 
