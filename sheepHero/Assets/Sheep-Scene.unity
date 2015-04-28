@@ -1095,6 +1095,12 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  filterValArray:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   duration: 60
 --- !u!1 &1391901782
 GameObject:
@@ -1246,6 +1252,12 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 0, g: 0, b: 0, a: 0}
+  filterValArray:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   duration: 60
 --- !u!114 &1502761754
 MonoBehaviour:

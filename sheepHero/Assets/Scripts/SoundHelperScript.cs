@@ -9,7 +9,7 @@ public class SoundHelperScript : MonoBehaviour {
 	public static SoundHelperScript Instance;
 
 	// Temporary, replace with sheepSound
-	public AudioClip playerShotSound;
+	public AudioClip sheepSound;
 	
 	void Awake()
 	{
@@ -22,9 +22,9 @@ public class SoundHelperScript : MonoBehaviour {
 	}
 
 	// This function is called by an object
-	public void MakePlayerShotSound()
+	public void MakeSheepSound()
 	{
-		MakeSound(playerShotSound);
+		MakeSound(sheepSound);
 	}
 	
 	/// <summary>

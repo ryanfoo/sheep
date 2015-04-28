@@ -28,13 +28,22 @@ public class SheepScript : MonoBehaviour {
 	void Start() 
 	{
 		// Replace with sheep sound
-		SoundHelperScript.Instance.MakePlayerShotSound();
+		SoundHelperScript.Instance.MakeSheepSound();
 		Destroy (gameObject, 5.3f);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		// replace with actual input
+		// Sheep Creation
+		bool isCreated = Input.GetButtonDown ("key");
+		isCreated = Input.GetButtonDown ("key");
+
+		if (isCreated) {
+			SoundHelperScript.Instance.MakeSheepSound();
+		}
+
 		// Movement per direction
 		movement = new Vector2 (speed.x * direction.x, speed.y * direction.y);
 	}
