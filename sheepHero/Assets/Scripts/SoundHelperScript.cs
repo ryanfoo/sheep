@@ -8,7 +8,7 @@ public class SoundHelperScript : MonoBehaviour {
 	/// </summary>
 	public static SoundHelperScript Instance;
 
-	// Temporary, replace with sheepSound
+	// Sounds
 	public AudioClip sheepSound;
 	
 	void Awake()
@@ -21,12 +21,11 @@ public class SoundHelperScript : MonoBehaviour {
 		Instance = this;
 	}
 
-	// This function is called by an object
-	public void MakeSheepSound()
+	public void MakeSheepSound(AudioClip sheepSound)
 	{
-		MakeSound(sheepSound);
+		MakeSound (sheepSound);
 	}
-	
+
 	/// <summary>
 	/// Play a given sound
 	/// </summary>
@@ -34,6 +33,7 @@ public class SoundHelperScript : MonoBehaviour {
 	private void MakeSound(AudioClip originalClip)
 	{
 		// As it is not 3D audio clip, position doesn't matter.
-		AudioSource.PlayClipAtPoint(originalClip, transform.position);
+
+		AudioSource.PlayClipAtPoint(originalClip, transform.position, 0.3f);
 	}
 }

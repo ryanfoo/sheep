@@ -22,7 +22,7 @@ public class BackgroundTextureScript : MonoBehaviour {
 	private float lerpTime = 1f;
 
 	// Filter variables
-	private float amp;
+	// private float amp = 5;
 	private float[] smooth = new float[2];
 
 	void Start () 
@@ -94,7 +94,7 @@ public class BackgroundTextureScript : MonoBehaviour {
 			// smoothening filter doing its thing
 			filterValArray[colorIdx] = ((0.01f * absInput) + (0.99f * filterValArray[colorIdx+1]));
 			// exaggerating the amplitude
-			amp = filterValArray[colorIdx]*7;
+			// amp = filterValArray[colorIdx]*7;
 			// it is a recursive filter, so it is doing its recursive thing
 			filterValArray[colorIdx+1] = filterValArray[colorIdx];
 		}
