@@ -34,9 +34,9 @@ public class ButtonScript : MonoBehaviour {
 			GenerateSheepScript sheep = GetComponent<GenerateSheepScript> ();
 			if (sheep != null)
 			{
-				sheep.generateSheep();
+				sheep.generateSheep(sheepSound);
 		    }
-			SoundHelperScript.Instance.MakeSheepSound (sheepSound);
+			// SoundHelperScript.Instance.MakeSheepSound (sheepSound);
 		}
 	}
 }
