@@ -47,13 +47,13 @@ public class GenerateSheepScript : MonoBehaviour {
 			{
 				sheepTransform.localScale += new Vector3 (transform.localScale.x * Mathf.Abs (rand), 
 				                                          transform.localScale.y * Mathf.Abs (rand), 
-				                                          transform.localScale.z + Mathf.Abs (rand));
+				                                          transform.localScale.z + (1.5f * Mathf.Abs (rand)));
 			}
 			else
 			{
 				sheepTransform.localScale -= new Vector3 (transform.localScale.x * Mathf.Abs (rand), 
 				                                          transform.localScale.y * Mathf.Abs (rand), 
-				                                          transform.localScale.z + Mathf.Abs (rand));
+				                                          transform.localScale.z + (1.5f * Mathf.Abs (rand)));
 			}
 		} 
 		// Scale the Black Sheep, funky scaling because the two sheep images are totally different sizes...
@@ -62,13 +62,13 @@ public class GenerateSheepScript : MonoBehaviour {
 			{
 				sheepTransform.localScale += new Vector3 (transform.localScale.x * Mathf.Abs (rand-0.1f) * 0.1f + 0.0125f, 
 				                                          transform.localScale.y * Mathf.Abs (rand-0.1f) * 0.1f + 0.0125f, 
-				                                          transform.localScale.z + Mathf.Abs (rand));
+				                                          transform.localScale.z + (1.5f * Mathf.Abs (rand)));
 			}
 			else
 			{
 				sheepTransform.localScale -= new Vector3 (transform.localScale.x * Mathf.Abs (rand-0.1f) * 0.1f - 0.01f, 
 				                                          transform.localScale.y * Mathf.Abs (rand-0.1f) * 0.1f - 0.01f, 
-				                                          transform.localScale.z + Mathf.Abs (rand));
+				                                          transform.localScale.z + (1.5f * Mathf.Abs (rand)));
 			}
 		}
 
