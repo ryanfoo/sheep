@@ -10,16 +10,6 @@ public class ButtonScript : MonoBehaviour {
 	// Sounds
 	public AudioClip sheepSound;
 
-	void Awake()
-	{
-		// Register the singleton
-		if (Instance != null)
-		{
-			Debug.LogError("Multiple instances of SoundEffectsHelper!");
-		}
-		Instance = this;
-	}
-
 	// Initialization
 	void Start () {
 
@@ -36,7 +26,6 @@ public class ButtonScript : MonoBehaviour {
 			{
 				sheep.generateSheep(sheepSound);
 		    }
-			// SoundHelperScript.Instance.MakeSheepSound (sheepSound);
 		}
 	}
 }

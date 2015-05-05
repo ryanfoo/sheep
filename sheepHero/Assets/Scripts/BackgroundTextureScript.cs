@@ -15,15 +15,12 @@ public class BackgroundTextureScript : MonoBehaviour {
 	public Color[] colorArray = new Color[5];
 	private int colorIdx = 0;
 	public float[] filterValArray = new float[5];
+	public static float currentFilter;
 
 	// Timing variables
 	public float duration = 60.0f;
 	private float t;
 	private float lerpTime = 1f;
-
-	// Filter variables
-	// private float amp = 5;
-	private float[] smooth = new float[2];
 
 	void Start () 
 	{
@@ -40,16 +37,13 @@ public class BackgroundTextureScript : MonoBehaviour {
 		nextColor = afternoonColor;
 
 		// Initialize filter array
-		filterValArray [0] = 120.0f;
-		filterValArray [1] = 0.0f;
-		filterValArray [2] = 60.0f;
-		filterValArray [3] = 300.0f;
-		filterValArray [4] = 600.0f;
+		filterValArray [0] = 5000.0f;
+		filterValArray [1] = 20000.0f;
+		filterValArray [2] = 15000.0f;
+		filterValArray [3] = 2000.0f;
+		filterValArray [4] = 1000.0f;
 
-		// Initialize filter
-		for (int i = 0; i < 2; i++) {
-			smooth [i] = 0.0f;	
-		}
+		currentFilter = filterValArray [0];
 	}
 	
 	void Update () 
@@ -78,6 +72,8 @@ public class BackgroundTextureScript : MonoBehaviour {
 				colorIdx = i + 1 == colorArray.Length ? 0 : i + 1;
 			}
 		}
+		// Set current filter
+		currentFilter = filterValArray [colorIdx];
 		// Set next color
 		nextColor = colorArray[colorIdx];
 		// Lerp colors
