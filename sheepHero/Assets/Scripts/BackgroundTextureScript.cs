@@ -40,14 +40,17 @@ public class BackgroundTextureScript : MonoBehaviour {
 		filterValArray [0] = 5000.0f;
 		filterValArray [1] = 20000.0f;
 		filterValArray [2] = 15000.0f;
-		filterValArray [3] = 2000.0f;
-		filterValArray [4] = 1000.0f;
+		filterValArray [3] = 2000.0f/2;
+		filterValArray [4] = 1000.0f/2;
 
 		currentFilter = filterValArray [0];
 	}
 	
 	void Update () 
 	{
+		//update time warp
+		float durationUpdated = duration / SheepClockAnimator.speed;
+
 		// If not next color, set t to 0
 		if (currentColor != nextColor) 
 		{
@@ -74,10 +77,15 @@ public class BackgroundTextureScript : MonoBehaviour {
 		}
 		// Set current filter
 		currentFilter = filterValArray [colorIdx];
+		//Adjust for depth of filter 
+		if (colorIdx != 1 && colorIdx != 2) {
+			currentFilter = currentFilter/GenerateSheepScript.depthAmount;
+		}  
+
 		// Set next color
 		nextColor = colorArray[colorIdx];
 		// Lerp colors
-		currentColor = Color.Lerp (currentColor, nextColor, (t/lerpTime)/duration);
+		currentColor = Color.Lerp (currentColor, nextColor, (t/lerpTime)/durationUpdated);
 		// Set new color
 		GetComponent<Renderer> ().material.color = currentColor;
 	}

@@ -11,7 +11,6 @@ GameObject:
   - 212: {fileID: 21245150}
   - 61: {fileID: 6121164}
   - 50: {fileID: 5051870}
-  - 114: {fileID: 11434014}
   - 114: {fileID: 11473320}
   - 82: {fileID: 8287596}
   m_Layer: 0
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 172016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.980000019, y: -1.89999998, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
+  m_LocalScale: {x: .150000006, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -72,7 +71,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: .300000012
+  m_Volume: .800000012
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -130,17 +129,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11434014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a04bf954f5fa474ba57016c044677a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11473320
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,11 +8,11 @@ public class GenerateSheepScript : MonoBehaviour {
 	// Temp Object
 	Transform newObject;
 	// Sheep Generate status
-	public static bool[] sheepCanGenerate = new bool[12];
+	public static bool[] sheepCanGenerate = new bool[48];
 	// Sheep Array
-	public static Transform[] sheepArray = new Transform[12];
+	public static Transform[] sheepArray = new Transform[48];
 	// Sheep Index
-	public static int sheepIndex = 12;
+	public static int sheepIndex = 0;
 	// Generate random numbers
 	private Vector3 v;
 	// Random #
@@ -21,11 +21,14 @@ public class GenerateSheepScript : MonoBehaviour {
 	private float time;
 	// Source
 	public AudioSource src;
+	//Low-pass filter parameters
+	public static int resonance = 5;
+	public static int depthAmount = 1;
 
 	// Use this for initialization
 	void Start () {
 		time = 5.0f;
-		for (int i = 0; i < sheepIndex; i++) {
+		for (int i = 0; i < 48; i++) {
 			sheepCanGenerate[i] = true;
 		}
 	}
@@ -41,10 +44,10 @@ public class GenerateSheepScript : MonoBehaviour {
 			sheepCanGenerate[sheepIndex] = true;
 		}
 
-		if (sheepIndex == 12) {
+		if (sheepIndex == 48) {
 			sheepIndex = 0;
 		}
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 48; i++) {
 			if (sheepArray[i] != null) {
 				if (sheepArray[i].position.x > 4.0f) {
 					DestroyImmediate (sheepArray[i].gameObject, true);
@@ -53,8 +56,12 @@ public class GenerateSheepScript : MonoBehaviour {
 				}
 				else {
 					sheepArray[i].GetComponent<AudioLowPassFilter> ().cutoffFrequency = BackgroundTextureScript.currentFilter;
+					sheepArray[i].GetComponent<AudioLowPassFilter> ().lowpassResonanceQ = resonance;
 					// Debug.Log (sheepArray[i].name + "'s cutoff hz: " + BackgroundTextureScript.currentFilter);
 				}
+			}
+			if (sheepArray[i] == null) {
+				sheepCanGenerate[i] = true;
 			}
 		}
 	}
@@ -62,11 +69,11 @@ public class GenerateSheepScript : MonoBehaviour {
 	public void generateSheep(AudioClip sheepSound)
 	{
 		if (sheepCanGenerate [sheepIndex]) {
-			rand = Random.Range (-0.6f, 0.6f);
+			rand = Random.Range (-0.5f, 0.5f);
 			if (rand < 0.0f)
-				v = new Vector3 (0, rand, rand - 2.0f);
+				v = new Vector3 (0, rand, rand - 1.0f);
 			else
-				v = new Vector3 (0, rand, rand + 2.0f);
+				v = new Vector3 (0, rand, rand + 1.0f);
 			// Create new sheep
 			var sheepTransform = Instantiate (sheepPrefab) as Transform;
 			// Assign Position
@@ -104,6 +111,7 @@ public class GenerateSheepScript : MonoBehaviour {
 			sheepTransform.gameObject.AddComponent<AudioLowPassFilter> ();
 			// BackgroundTextureScript background = GetComponent<BackgroundTextureScript> ();
 			sheepTransform.GetComponent<AudioLowPassFilter> ().cutoffFrequency = BackgroundTextureScript.currentFilter;
+			sheepTransform.GetComponent<AudioLowPassFilter> ().lowpassResonanceQ = resonance;
 			// Set to new object
 			newObject = sheepTransform;
 			// Add to sheep array

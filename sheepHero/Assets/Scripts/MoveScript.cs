@@ -20,10 +20,10 @@ public class MoveScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		if (direction.y == 0.4f) {
-			direction.y = -0.4f;
+		if (direction.y == 0.2f) {
+			direction.y = -0.2f;
 		} else {
-			direction.y = 0.4f;
+			direction.y = 0.2f;
 		}
 		// Movement per direction
 		movement = new Vector2 (speed.x * direction.x, speed.y * direction.y);
